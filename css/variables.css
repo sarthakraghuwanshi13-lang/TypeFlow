@@ -1,0 +1,125 @@
+/* ============================================
+   TypeFlow — Design Tokens & Theme Variables
+   ============================================ */
+
+:root {
+  /* ---- Typography ---- */
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  --font-ui: 'Inter', 'Segoe UI', system-ui, sans-serif;
+
+  /* ---- Spacing Scale ---- */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* ---- Border Radii ---- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* ---- Transitions ---- */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-slow: 0.4s ease;
+
+  /* ---- Sizing ---- */
+  --typing-max-width: 900px;
+  --typing-font-size: 1.55rem;
+  --typing-line-height: 2.2;
+  --header-height: 60px;
+
+  /* ---- Shadows ---- */
+  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-elevated: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 20px rgba(232, 185, 49, 0.2);
+}
+
+/* ============================================
+   Dark Theme (Default) — Pink & Yellow
+   ============================================ */
+[data-theme="dark"] {
+  --bg-primary: #1e1e2a;
+  --bg-secondary: #272738;
+  --bg-surface: #31314a;
+  --bg-surface-hover: #3a3a55;
+  --bg-overlay: rgba(30, 30, 42, 0.94);
+
+  --text-primary: #f0e6d3;
+  --text-secondary: #b8a9c0;
+  --text-dim: #6a5a78;
+  --text-ghost: #3d3450;
+
+  /* Primary accent: warm golden yellow */
+  --accent: #e8b931;
+  --accent-hover: #f5ca42;
+  --accent-dim: rgba(232, 185, 49, 0.14);
+
+  /* Secondary accent: soft pink */
+  --accent-pink: #f472b6;
+  --accent-pink-hover: #f9a8d4;
+  --accent-pink-dim: rgba(244, 114, 182, 0.14);
+
+  --color-correct: #f0e6d3;
+  --color-incorrect: #f4587a;
+  --color-incorrect-bg: rgba(244, 88, 122, 0.12);
+  --color-extra: #c06080;
+  --color-caret: #e8b931;
+  --color-current-word: rgba(232, 185, 49, 0.08);
+
+  /* Chart-specific colors */
+  --chart-wpm: #e8b931;
+  --chart-raw: #8a8a9a;
+  --chart-error: #f4587a;
+
+  --border-color: rgba(244, 114, 182, 0.1);
+  --border-active: rgba(232, 185, 49, 0.35);
+
+  --scrollbar-track: #272738;
+  --scrollbar-thumb: #4a3a5a;
+}
+
+/* ============================================
+   Light Theme — Warm Pinks & Yellows
+   ============================================ */
+[data-theme="light"] {
+  --bg-primary: #fef7f0;
+  --bg-secondary: #fdf0e8;
+  --bg-surface: #ffffff;
+  --bg-surface-hover: #fff5ee;
+  --bg-overlay: rgba(254, 247, 240, 0.95);
+
+  --text-primary: #3d2b3a;
+  --text-secondary: #7a5a70;
+  --text-dim: #c0a0b0;
+  --text-ghost: #e8d0dc;
+
+  --accent: #c99a10;
+  --accent-hover: #b08a0d;
+  --accent-dim: rgba(201, 154, 16, 0.1);
+
+  --accent-pink: #d45a95;
+  --accent-pink-hover: #c04a85;
+  --accent-pink-dim: rgba(212, 90, 149, 0.1);
+
+  --color-correct: #3d2b3a;
+  --color-incorrect: #d94060;
+  --color-incorrect-bg: rgba(217, 64, 96, 0.08);
+  --color-extra: #c06060;
+  --color-caret: #c99a10;
+  --color-current-word: rgba(201, 154, 16, 0.08);
+
+  --chart-wpm: #c99a10;
+  --chart-raw: #b0a0a8;
+  --chart-error: #d94060;
+
+  --border-color: rgba(212, 90, 149, 0.12);
+  --border-active: rgba(201, 154, 16, 0.3);
+
+  --scrollbar-track: #fdf0e8;
+  --scrollbar-thumb: #e0c0d0;
+}

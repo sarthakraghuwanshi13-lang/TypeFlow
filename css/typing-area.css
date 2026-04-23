@@ -1,0 +1,166 @@
+/* ============================================
+   TypeFlow — Typing Area Styles
+   ============================================ */
+
+/* ---- Typing Container ---- */
+.typing-container {
+  position: relative;
+  width: 100%;
+  max-width: var(--typing-max-width);
+}
+
+/* Hidden input that captures keystrokes */
+#typing-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+/* ---- Words Display ---- */
+.words-display {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: var(--typing-font-size);
+  line-height: var(--typing-line-height);
+  color: var(--text-ghost);
+  max-height: calc(var(--typing-font-size) * var(--typing-line-height) * 3);
+  overflow: hidden;
+  cursor: text;
+  padding: var(--space-sm) var(--space-xs);
+  border-radius: var(--radius-md);
+  transition: filter var(--transition-normal);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.words-display.blurred {
+  filter: blur(5px);
+  opacity: 0.5;
+}
+
+.words-display.blurred::after {
+  content: 'Click here or start typing to focus';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: none;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-family: var(--font-ui);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* ---- Individual Word ---- */
+.word {
+  display: inline-block;
+  margin: 0 6px 0 0;
+  position: relative;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--transition-fast);
+}
+
+.word.current {
+  border-bottom-color: var(--accent);
+}
+
+.word.error-word {
+  border-bottom-color: var(--color-incorrect);
+}
+
+/* ---- Individual Character ---- */
+.char {
+  display: inline-block;
+  position: relative;
+  transition: color var(--transition-fast);
+  letter-spacing: 0.01em;
+}
+
+.char.correct {
+  color: var(--color-correct);
+}
+
+.char.incorrect {
+  color: var(--color-incorrect);
+  /* Subtle background for incorrect characters */
+  background: var(--color-incorrect-bg);
+  border-radius: 2px;
+}
+
+.char.extra {
+  color: var(--color-extra);
+  opacity: 0.7;
+  font-size: 0.95em;
+}
+
+/* ---- Caret ---- */
+.caret {
+  position: absolute;
+  width: 2.5px;
+  height: calc(var(--typing-font-size) * 1.35);
+  background: var(--color-caret);
+  border-radius: 2px;
+  transition: left 0.08s ease, top 0.08s ease;
+  z-index: 5;
+  pointer-events: none;
+  animation: caretPulse 1s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(0, 212, 170, 0.4);
+}
+
+.caret.typing {
+  animation: none;
+  opacity: 1;
+}
+
+/* ---- Typing Focus Overlay ---- */
+.typing-focus-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: var(--typing-max-width);
+}
+
+.typing-focus-wrapper::before,
+.typing-focus-wrapper::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 20px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.typing-focus-wrapper::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--bg-primary), transparent);
+}
+
+.typing-focus-wrapper::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--bg-primary), transparent);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .words-display {
+    font-size: 1.2rem;
+    line-height: 2;
+    max-height: calc(1.2rem * 2 * 3);
+  }
+
+  .caret {
+    height: calc(1.2rem * 1.35);
+  }
+}
+
+@media (max-width: 480px) {
+  .words-display {
+    font-size: 1.05rem;
+    max-height: calc(1.05rem * 2 * 3);
+  }
+}

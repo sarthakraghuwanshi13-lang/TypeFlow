@@ -1,3 +1,4 @@
+You can reach to the site through: https://sarthakraghuwanshi13-lang.github.io/TypeFlow/
 # TypeFlow ⌨️
 
 A modern, minimal typing speed test inspired by Monkeytype — built from scratch with vanilla JavaScript.

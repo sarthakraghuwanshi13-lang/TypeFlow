@@ -59,7 +59,7 @@
 /* ---- Individual Word ---- */
 .word {
   display: inline-block;
-  margin: 0 6px 0 0;
+  margin: 0 14px 0 0;
   position: relative;
   border-bottom: 2px solid transparent;
   transition: border-color var(--transition-fast);
@@ -78,7 +78,7 @@
   display: inline-block;
   position: relative;
   transition: color var(--transition-fast);
-  letter-spacing: 0.01em;
+  letter-spacing: 0.05em;
 }
 
 .char.correct {
